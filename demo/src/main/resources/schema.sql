@@ -9,3 +9,13 @@ CREATE TABLE USERS
 
     CONSTRAINT pk__id__user primary key (id)
 );
+
+create table words
+(
+    id              integer generated always as identity,
+    polish_word     text not null,
+    english_word    text,
+    spanish_word    text,
+
+    CONSTRAINT pk__id__word primary key (id)
+);
