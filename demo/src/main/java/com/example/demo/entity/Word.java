@@ -15,4 +15,13 @@ public class Word {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @Column(name = "polish_word", nullable = false)
+    private String polishWord;
+
+    @Column(name = "english_word")
+    private String englishWord;
+
+    @Column(name = "spanish_word")
+    private String spanishWord;
 }
