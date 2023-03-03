@@ -1,4 +1,7 @@
 package com.example.demo.repository;
 
-public interface CardRepository {
+import com.example.demo.entity.Card;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CardRepository extends JpaRepository <Card, Long> {
 }
