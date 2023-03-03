@@ -16,6 +16,17 @@ create table words
     polish_word     text not null,
     english_word    text,
     spanish_word    text,
+    card_id         integer,
 
-    CONSTRAINT pk__id__word primary key (id)
+    CONSTRAINT pk__id__word primary key (id),
+    CONSTRAINT fk__id__card_id foreign key (card_id) REFERENCES cards (id)
+);
+
+create table cards
+(
+    id              integer generated always as identity,
+    word_id         integer not null,
+
+    CONSTRAINT pk__id__cards PRIMARY KEY (id),
+    CONSTRAINT fk__word_id__cards foreign key (word_id) REFERENCES words (id)
 );
