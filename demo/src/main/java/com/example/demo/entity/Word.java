@@ -24,4 +24,11 @@ public class Word {
 
     @Column(name = "spanish_word")
     private String spanishWord;
+
+    @Column(name = "category", nullable = false)
+    private String category;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "card_id", nullable = false)
+    private Card cardId;
 }
